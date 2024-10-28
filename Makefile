@@ -13,13 +13,13 @@
 
 NAME		=	fractol
 
-CC			=	cc
+CC		=	cc
 CFLAGS		=	-Wall -Werror -Wextra
 LIBS      	=	-lXext -lX11 -lm
-RM			=	rm -rf
+RM		=	rm -rf
 
-MLX			=	./minilibx-linux/libmlx.a
-INC			=	minilibx-linux/
+MLX		=	./minilibx-linux/libmlx.a
+INC		=	minilibx-linux/
 
 SRCS		=	fractol.c fract_init.c fract_render.c fract_util.c key_events.c utils.c 
 
