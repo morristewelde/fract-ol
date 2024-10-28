@@ -10,6 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
+
 NAME		=	fractol
 
 CC			=	cc
@@ -33,7 +34,7 @@ $(MLX):
 			@make -sC ./minilibx-linux
 
 clean:
-			@$(RM)
+			@$(RM) $(OBJ)
 			@make clean -C ./minilibx-linux
 
 fclean: 	clean
