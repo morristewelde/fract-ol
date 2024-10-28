@@ -1,0 +1,37 @@
+Linux graphical interfae 
+	
+	CHOOSING YOUR DESKTOP ENVIRONMENT
+
+	1. GNOME - (imilar to windows operating system).
+	2. KDE -  was the original big time deskto environment fr linux.
+		both of the above are meat to be strong and beautiful (so they are heavy).
+	3. XFCE - is light wieght desktop environment (it i meat for unction than aesthetics).
+
+1. GNOME - the file manager is "nautilus". ubuntu uses GNOME.
+2. 
+3. XFCE - file manager is "thunar".
+
+X SERVER
+ x server was developed in MIT for research purposes.
+
+ X -  capital X on the command line will start the X server
+ xinit - will give graphical environment (basically looks like a normal command line to type our comands on)
+
+	e.g - xclock (on the terminal we get after xinit) will start display clock;
+			- ctrl +  to kill the clock
+		- twm (tabed windows manager) this is not quite modern one 
+			- xeyes 
+			- xclock    these are examples of windows that can be opened are 		minimized after twm is running in the back ground.
+
+		- metacity &   - the & sig will make the new file mamager to run in the background.
+			- xeyes 
+			- xclock  - noow the to will have more interactive windows like - minimize maximize close buttons.   
+
+Xorg -configure   -this will create xorg.conf.new file  
+less xorg.conf.new - will desplay the xorg.onfg file 
+	in this file we will find display, mouse, and keyboard we also find some information about the fonts style and size
+
+
+
+
+MiniLibX
