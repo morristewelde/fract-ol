@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/28 18:33:46 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/29 20:48:47 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,12 @@ t_complex	square_complex(t_complex z)
 	res.y_i = 2 * z.x_r * z.y_i;
 	return (res);
 }
+
+double	map_s(double old_n, double new_mn, double new_mx, double old_mx)
+{
+	return (((new_mx - new_mn) * old_n / (old_mx)) + new_mn);
+}
+
 /*void	putstr_fd(char *s, int fd)
 {
 	if (s == NULL || fd <  0)

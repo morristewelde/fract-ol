@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 03:57:09 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/28 18:33:24 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:28:28 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	ft_malloc_error(void)
 void	data_init(t_data *data)
 {
 	data->escape_value = 4;
-	data->iteration = 10;
+	data->iteration = 15;
 	data->shift_x = 0;
 	data->shift_y = 0;
 	data->zoom = 1.0;

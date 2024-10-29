@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:38:11 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/28 17:48:50 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:48:20 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,6 @@
 
 # define BLACK       0x000000
 # define WHITE       0xFFFFFF  
-# define RED         0xFF0000
-# define GREEN       0x00FF00
-# define BLUE        0x0000FF
-
-# define MAGENTA_BURST   0xFF00FF
-# define LIME_SHOCK      0xCCFF00
-# define NEON_ORANGE     0xFF6600
-# define PSYCHEDELIC_PURPLE 0x660066
-# define AQUA_DREAM      0x33CCCC
-# define HOT_PINK        0xFF66B2
-# define ELECTRIC_BLUE   0x0066FF
-# define LAVA_RED        0xFF3300
 
 typedef struct s_img
 {
