@@ -6,7 +6,7 @@
 #    By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 23:48:08 by mtewelde          #+#    #+#              #
-#    Updated: 2024/10/29 20:48:59 by mtewelde         ###   ########.fr        #
+#    Updated: 2024/10/30 22:34:40 by mtewelde         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,21 +19,21 @@ RM			=	rm -rf
 
 MLX			=	./minilibx-linux/libmlx.a
 
-SRCS		=	fractol.c fract_init.c fract_render.c key_events.c utils.c 
+SRCS		=	fractol.c fract_init.c fract_render.c events.c utils.c 
 
 OBJ 		= 	$(SRCS:.c=.o)
 
 all: 		$(MLX) $(NAME)
-
-$(NAME): 	$(OBJ) $(MLX)
+ 
+$(NAME): 	$(OBJ) $(MLX) $(FTPRINTF)
 			@$(CC) $(CFLAGS) $(OBJ) $(MLX) $(LIBS) -o $(NAME)
 
 $(MLX):
-			@make -C ./minilibx-linux
+			@make -sC ./minilibx-linux
 
 clean:
 			@$(RM) $(OBJ)
-			@make clean -C ./minilibx-linux
+			@make clean -sC ./minilibx-linux
 
 fclean: 	clean
 			@$(RM) $(NAME)

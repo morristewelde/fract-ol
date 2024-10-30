@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/29 20:48:47 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/30 21:25:02 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,32 @@ double	ft_atodb(char *s)
 	return ((res + r) * sign);
 }
 
+int	valid_float(char *s)
+{
+	int	flag;
+	int	i;
+
+	i = 0;
+	flag = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	while (s[i])
+	{
+		if (s[i] == '.')
+		{
+			flag++;
+			if (flag > 1)
+				return (0);
+		}
+		else if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	if (ft_atodb(s) > 2.0 || ft_atodb(s) < -2.0)
+		return (0);
+	return (1);
+}
+
 //vector addition
 t_complex	sum_complex(t_complex z1, t_complex z2)
 {
@@ -78,7 +104,7 @@ double	map_s(double old_n, double new_mn, double new_mx, double old_mx)
 	return (((new_mx - new_mn) * old_n / (old_mx)) + new_mn);
 }
 
-/*void	putstr_fd(char *s, int fd)
+void	putstr_fd(char *s, int fd)
 {
 	if (s == NULL || fd <  0)
 		return ;
@@ -87,4 +113,4 @@ double	map_s(double old_n, double new_mn, double new_mx, double old_mx)
 		write(fd, s, 1);
 		putstr_fd(s + 1, 1);
 	}
-}*/
+}

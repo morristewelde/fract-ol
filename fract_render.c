@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 03:57:09 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/29 22:01:01 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/30 21:19:31 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ static void	handle_pixel(int x, int y, t_data *data)
 	unsigned int	i;
 	int				color;
 
+	i = 0;
 	z.x_r = (map_s(x, -2, 2, WIDTH) * data->zoom) + data->shift_x;
 	z.y_i = (map_s(y, 2, -2, HEIGHT) * data->zoom) + data->shift_y;
 	init_complex(&z, &c, data);
-	i = 0;
 	while (i < data->iteration)
 	{
 		z = sum_complex(square_complex(z), c);
