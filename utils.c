@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 20:53:01 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 21:43:18 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ double	ft_atodb(char *s)
 	return ((res + r) * sign);
 }
 
+//  recommened to add the following b/c it will be more effective
+// if (ft_atodb(s) > 2.0 || ft_atodb(s) < -2.0)
+	// 	return (0);
 int	valid_float(char *s)
 {
 	int	flag;
@@ -74,8 +77,6 @@ int	valid_float(char *s)
 			return (0);
 		i++;
 	}
-	if (ft_atodb(s) > 2.0 || ft_atodb(s) < -2.0)
-		return (0);
 	return (1);
 }
 

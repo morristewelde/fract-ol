@@ -6,22 +6,25 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:38:11 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 21:23:25 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 21:37:31 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
+//only perrror is usedfrom stdio.h 
+# include <stdio.h>
+//exit();
 # include <stdlib.h>
 # include <unistd.h>
 # include "minilibx-linux/mlx.h"
-# include <math.h>
+// # include <math.h>
 # include <X11/keysym.h>
 # include <X11/X.h>
 
-# define WIDTH	800
-# define HEIGHT	800
+# define WIDTH	600
+# define HEIGHT	600
 
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF

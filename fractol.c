@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 20:37:25 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 22:05:40 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,24 @@
 void	invalid_input(void)
 {
 	putstr_fd("Invalid Input\n", 2);
-	putstr_fd("please enter : \n", 2);
-	putstr_fd("\"./fractol mandelbrot or ./fractol julia x y\"\n", 2);
-	putstr_fd("x and y should be between -2.0 and 2.0\n", 2);
+	putstr_fd("Please enter : \n", 2);
+	putstr_fd("\"./fractol mandelbrot\n", 2);
+	putstr_fd("\t or  \"./fractol burningship\"\n", 2);
+	putstr_fd("\t\t or  \"./fractol julia x y\"\n", 2);
+	putstr_fd("x and y should ideally be between -2.0 and 2.0\"\n", 2);
 	exit(EXIT_FAILURE);
 }
 
 void	instructions(void)
 {
-	putstr_fd("to zoom in and out use scroll of the mouse\n", 1);
-	putstr_fd("to move use the arrows or the keys 'w' 'a' 's' 'd': \n", 1);
-	putstr_fd("to increase and decrease iteration\n", 1);
-	putstr_fd("\t\t\tuse the keys '+' and ' -'\n", 1);
+	putstr_fd("To zoom in and out use scroll of the mouse\n", 1);
+	putstr_fd("To close the windows use 'esc' key\n", 1);
+	putstr_fd("\t or the close button on the opened window\n", 1);
+	putstr_fd("To move use the arrows 'up' 'down' 'right' 'left'\n", 1);
+	putstr_fd("\tor the keys 'w'(up) 's'(down) 'd'(right) 'a'(left)\n", 1);
+	putstr_fd("To increase and decrease iteration\n", 1);
+	putstr_fd("\t Use the keys '+' and ' -'\n", 1);
+	putstr_fd("\t This will increase and decrease image quality)\n", 1);
 }
 
 int	main(int ac, char **av)

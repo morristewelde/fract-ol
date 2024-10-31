@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 03:57:09 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 20:41:17 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 21:35:00 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_malloc_error(void)
 {
-	putstr_fd("Problems with malloc", 2);
+	perror("Problems with malloc");
 	exit(EXIT_FAILURE);
 }
 
