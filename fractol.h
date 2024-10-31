@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:38:11 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 21:37:31 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 22:54:44 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ typedef struct s_data
 	double			julia_x;
 	double			julia_y;
 	int				current_color;
+	double			initial_julia_x;
+	double			initial_julia_y;
 }	t_data;
 
 double		map_s(double old_n, double new_mn, double new_mx, double old_mx);
@@ -84,5 +86,6 @@ int			get_color_pattern(unsigned int itr, unsigned int max_itr);
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
 void		putstr_fd(char *s, int fd);
+void		ft_reset(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 20:58:55 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 22:49:29 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	key_handle(int keysym, t_data *data)
 		data->iteration += 5;
 	else if (keysym == XK_KP_Subtract && data->iteration > 0)
 		data->iteration -= 5;
+	else if (keysym == XK_space)
+		ft_reset(data);
 	else if (keysym == XK_Escape)
 		close_f(data);
 	ft_render(data);

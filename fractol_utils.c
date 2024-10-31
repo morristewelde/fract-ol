@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 20:59:59 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:03:17 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,19 @@ int	get_color_pattern(unsigned int itr, unsigned int max_itr)
 	blue = (int)(8.5 * (1 - ratio) * (1 - ratio) * (1 - ratio) * ratio * 255);
 	res = (red << 16) | (green << 8) | (blue);
 	return (res);
+}
+
+void	ft_reset(t_data *data)
+{
+	data->escape_value = 4;
+	data->iteration = 15;
+	data->shift_x = 0;
+	data->shift_y = 0;
+	data->zoom = 1.0;
+	if (!ft_strncmp(data->name, "julia", 5))
+	{
+		data->julia_x = data->initial_julia_x;
+		data->julia_y = data->initial_julia_y;
+	}
+	ft_render(data);
 }

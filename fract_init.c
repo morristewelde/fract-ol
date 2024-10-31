@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 03:57:09 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 21:35:00 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:02:44 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@ static void	ft_malloc_error(void)
 	exit(EXIT_FAILURE);
 }
 
-// data->iteration = 240; beautful
 void	data_init(t_data *data)
 {
 	data->escape_value = 4;
-	data->iteration = 15;
+	data->iteration = 10;
 	data->shift_x = 0;
 	data->shift_y = 0;
 	data->zoom = 1.0;
+	if (!ft_strncmp(data->name, "julia", 5))
+	{
+		data->initial_julia_x = data->julia_x;
+		data->initial_julia_y = data->julia_y;
+	}
 }
 
 static void	event_init(t_data	*data)
