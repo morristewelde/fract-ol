@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 23:03:17 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:06:13 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	get_color_pattern(unsigned int itr, unsigned int max_itr)
 void	ft_reset(t_data *data)
 {
 	data->escape_value = 4;
-	data->iteration = 15;
+	data->iteration = 10;
 	data->shift_x = 0;
 	data->shift_y = 0;
 	data->zoom = 1.0;

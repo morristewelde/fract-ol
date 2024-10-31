@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 22:49:40 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:54:35 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void	instructions(void)
 	putstr_fd("To move use the arrows 'up' 'down' 'right' 'left'\n", 1);
 	putstr_fd("\tor the keys 'w'(up) 's'(down) 'd'(right) 'a'(left)\n", 1);
 	putstr_fd("To increase and decrease iteration\n", 1);
-	putstr_fd("\t Use the keys '+' and ' -'\n", 1);
+	putstr_fd("\t Use the keys '+' and '-'\n", 1);
+	putstr_fd("\t press space to reset the fractol to the original set", 1);
 	putstr_fd("\t This will increase and decrease image quality)\n", 1);
+
 }
 
 int	main(int ac, char **av)

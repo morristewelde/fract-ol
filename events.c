@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 22:49:29 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:58:08 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,15 @@ int	key_handle(int keysym, t_data *data)
 		ft_reset(data);
 	else if (keysym == XK_Escape)
 		close_f(data);
+	else if (keysym == XK_l)
+		data->mouse_locked = !data->mouse_locked;
 	ft_render(data);
 	return (0);
 }
 
 int	julia_t(int x, int y, t_data *data)
 {
-	if (!ft_strncmp(data->name, "julia", 5))
+	if (!ft_strncmp(data->name, "julia", 5) && !data->mouse_locked)
 	{
 		data->julia_x = (map_s(x, -2, +2, WIDTH) * data->zoom);
 		data->julia_y = (map_s(y, -2, +2, WIDTH) * data->zoom);

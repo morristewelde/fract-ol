@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 03:57:09 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 23:02:44 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:21:04 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	data_init(t_data *data)
 	data->shift_x = 0;
 	data->shift_y = 0;
 	data->zoom = 1.0;
+	data->mouse_locked = 0;
 	if (!ft_strncmp(data->name, "julia", 5))
 	{
 		data->initial_julia_x = data->julia_x;
