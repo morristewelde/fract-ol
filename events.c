@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/30 23:00:33 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:58:55 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,14 @@ int	mouse_handle(int button, int x, int y, t_data *data)
 {
 	double	mouse_fractal_x;
 	double	mouse_fractal_y;
+	double	center_x;
+	double	center_y;
 	double	zoom_factor;
 
-	mouse_fractal_x = (map_s(x, -2, 2, WIDTH) * data->zoom);
-	mouse_fractal_y = (map_s(y, -2, 2, HEIGHT) * data->zoom);
+	mouse_fractal_x = (map_s(x, -2, 2, WIDTH) * data->zoom) + data->shift_x;
+	mouse_fractal_y = (map_s(y, -2, 2, HEIGHT) * data->zoom) + data->shift_y;
+	center_x = (map_s(WIDTH / 2, -2, 2, WIDTH) * data->zoom) + data->shift_x;
+	center_y = (map_s(HEIGHT / 2, -2, 2, HEIGHT) * data->zoom) + data->shift_y;
 	if (button == 5)
 		zoom_factor = 1.1;
 	else if (button == 4)
@@ -39,8 +43,8 @@ int	mouse_handle(int button, int x, int y, t_data *data)
 	else
 		return (0);
 	data->zoom *= zoom_factor;
-	data->shift_x = mouse_fractal_x - (map_s(x, -2, 2, WIDTH) * data->zoom);
-	data->shift_y = mouse_fractal_y - (map_s(y, 2, -2, HEIGHT) * data->zoom);
+	data->shift_x += (mouse_fractal_x - center_x) * (1 - zoom_factor);
+	data->shift_y += (mouse_fractal_y - center_y) * (1 - zoom_factor);
 	ft_render(data);
 	return (1);
 }

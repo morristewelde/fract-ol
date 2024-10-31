@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/30 20:44:39 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:37:25 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 void	invalid_input(void)
 {
-	printf("Invalid Input\n");
-	printf("please enter : \n");
-	printf("\"./fractol mandelbrot or ./fractol julia x y\"\n");
-	printf("x and y should be between -2.0 and 2.0\n");
+	putstr_fd("Invalid Input\n", 2);
+	putstr_fd("please enter : \n", 2);
+	putstr_fd("\"./fractol mandelbrot or ./fractol julia x y\"\n", 2);
+	putstr_fd("x and y should be between -2.0 and 2.0\n", 2);
 	exit(EXIT_FAILURE);
 }
 
 void	instructions(void)
 {
-	printf("to zoom in and out use scroll of the mouse\n");
-	printf("to move use the arrows or the keys 'w' 'a' 's' 'd': \n");
-	printf("to increase and decrease iteration use the keys '+' and '-'\n");
+	putstr_fd("to zoom in and out use scroll of the mouse\n", 1);
+	putstr_fd("to move use the arrows or the keys 'w' 'a' 's' 'd': \n", 1);
+	putstr_fd("to increase and decrease iteration\n", 1);
+	putstr_fd("\t\t\tuse the keys '+' and ' -'\n", 1);
 }
 
 int	main(int ac, char **av)
@@ -33,10 +34,12 @@ int	main(int ac, char **av)
 	t_data	data;
 	int		m;
 	int		j;
+	int		b;
 
 	m = ft_strncmp(av[1], "mandelbrot", 10);
+	b = ft_strncmp(av[1], "burningship", 11);
 	j = ft_strncmp(av[1], "julia", 5);
-	if (ac == 2 && m == 0)
+	if (ac == 2 && (m == 0 || b == 0))
 		data.name = av[1];
 	else if (ac == 4 && j == 0)
 	{
