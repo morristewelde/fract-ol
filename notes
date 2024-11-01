@@ -1,0 +1,111 @@
+Linux graphical interfae 
+	
+	CHOOSING YOUR DESKTOP ENVIRONMENT
+
+	1. GNOME - (imilar to windows operating system).
+	2. KDE -  was the original big time deskto environment fr linux.
+		both of the above are meat to be strong and beautiful (so they are heavy).
+	3. XFCE - is light wieght desktop environment (it i meat for unction than aesthetics).
+
+1. GNOME - the file manager is "nautilus". ubuntu uses GNOME.
+2. 
+3. XFCE - file manager is "thunar".
+
+X SERVER
+ x server was developed in MIT for research purposes.
+
+ X -  capital X on the command line will start the X server
+ xinit - will give graphical environment (basically looks like a normal command line to type our comands on)
+
+	e.g - xclock (on the terminal we get after xinit) will start display clock;
+			- ctrl +  to kill the clock
+		- twm (tabed windows manager) this is not quite modern one 
+			- xeyes 
+			- xclock    these are examples of windows that can be opened are 		minimized after twm is running in the back ground.
+
+		- metacity &   - the & sig will make the new file mamager to run in the background.
+			- xeyes 
+			- xclock  - noow the to will have more interactive windows like - minimize maximize close buttons.   
+
+Xorg -configure   -this will create xorg.conf.new file  
+less xorg.conf.new - will desplay the xorg.onfg file 
+	in this file we will find display, mouse, and keyboard we also find some information about the fonts style and size
+
+
+
+
+MiniLibX
+
+
+Notes for fract-ol project
+
+	- mandelbrot => f(z) = z(n-1)^2 + c
+		-z is intially (0, 0)
+		- c is the actual point in the coordinate that we want to check if they are in the mandelbort set or not.
+		- escape_value is driven from paytogorus theorum squared 
+
+
+-- int	get_color_pattern(unsigned int itr, unsigned int max_itr)
+-- {
+-- 	double	ratio;
+-- 	int		red;
+-- 	int		green;
+-- 	int		blue;
+-- 	int		res;
+
+-- 	ratio = (double)itr / max_itr;
+-- 	red = (int)(9 * (1 - ratio) * ratio * ratio * ratio * 255); 167
+-- 	green = (int)(15 * (1 - ratio) * (1 - ratio) * ratio * ratio * 255); 18
+-- 	blue = (int)(8.5 * (1 - ratio) * (1 - ratio) * (1 - ratio) * ratio * 255); 2
+-- 	res = (red << 16) | (green << 8) | (blue);
+-- 	return (res);
+-- }
+
+COLOR PATTERN
+	eg - - itr = 9 maxit = 10
+			red = (9 * .1 * .9 *.9 *.9 *255)   167 
+			green = (15 * .1 * .1 *.9 *.9 *255) 18
+			blue = (8.5 * .1 * .1 *.1 *.9 *255) 2    167 018 002  === close to red
+		
+		--	res = (red << 16) | (green << 8) | (blue);
+		--	00000000 00000000 00000000
+		--	10100111 00000000 00000000    //red << 16  167 in hexa is 0xA70000
+		--	10100111 00010010 00000000    //green << 8 018 in hexa is 
+		--	10100111 00010010 00000010    //blue 2 in hexa is 02
+
+
+	- itr = 1
+			red = (9 * .9 * .1 *.1 *.1 *255) 2 
+			green = (15 * .9 * .9 *.1 *.1 *255) 30
+			blue = (8.5 * .9 * .9 *.9 *.1 *255) 158  002 018 158  === close to complete blue
+	- itr = 5
+			red = (9 * .5 * .5 *.5 *.5 *255) 143 
+			green = (15 * .5 * .5 *.5 *.5 *255) 239
+			blue = (8.5 * .5 * .5 *.5 *.5 *255) 135  143 239 135  === close to light green
+--
+
+MOUSE HANDLE 
+
+	map_s return (((new_mx - new_mn) * old_n / (old_mx)) + new_mn);
+
+	center_x = (map_s(WIDTH / 2, -2, 2, WIDTH) * data->zoom) + data->shift_x;
+			map_s(400, -2, 2, 800) = 4 * 400/800 - 2 = 0 ;
+	center_y = (map_s(HEIGHT / 2, -2, 2, HEIGHT) * data->zoom) + data->shift_x;
+			map_s(400, -2, 2, 800) = 4 * 400/800 - 2 = 0 ;
+	data->shift_x += (mouse_fractal_x - center_x) * (1 - zoom_factor);
+	data->shift_y += (mouse_fractal_y - center_y) * (1 - zoom_factor);
+
+				
+ 	-- if zoom in then it scales by 1.1 and shift it -.1 by both diresctions so that the point of themouse keeps intact; 				(1 - 0) * (1 - 1.1)
+ 	-- if zoom in then it scales by 0.9 and shift it .1 by both diresctions so that the point of themouse keeps intact; 				(1 - 0) * (1 - 1.1)
+				1 * .1
+				-.1
+				2.1
+				2.1
+--
+
+KEYPRESS and KEYPRESSMASK
+ 	-- Key difference is keyPress and KeyPressMask (ButtonPress and ButtonPressMask) 
+	-- is the Key press is is typically an event identifier 
+
+	

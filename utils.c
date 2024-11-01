@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 21:43:18 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/01 20:21:34 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strncmp(char *s1, char *s2, int n)
 	i = 0;
 	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
 		i++;
-	if (i == n)
+	if (i == n && !s1[i])
 		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
@@ -91,10 +91,18 @@ void	putstr_fd(char *s, int fd)
 	}
 }
 
-double	ft_abs_dbl(double nb)
+int	color_pattern(unsigned int itr, unsigned int max_itr)
 {
-	if (nb < 0)
-		return (-nb);
-	else
-		return (nb);
+	double	ratio;
+	int		red;
+	int		green;
+	int		blue;
+	int		res;
+
+	ratio = (double)itr / max_itr;
+	red = (int)(9 * (1 - ratio) * ratio * ratio * ratio * 255);
+	green = (int)(15 * (1 - ratio) * (1 - ratio) * ratio * ratio * 255);
+	blue = (int)(8.5 * (1 - ratio) * (1 - ratio) * (1 - ratio) * ratio * 255);
+	res = (red << 16) | (green << 8) | (blue);
+	return (res);
 }

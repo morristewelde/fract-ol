@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 23:06:13 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/01 20:13:13 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,10 @@ double	map_s(double old_n, double new_mn, double new_mx, double old_mx)
 	return (((new_mx - new_mn) * old_n / (old_mx)) + new_mn);
 }
 
-int	get_color_pattern(unsigned int itr, unsigned int max_itr)
-{
-	double	ratio;
-	int		red;
-	int		green;
-	int		blue;
-	int		res;
-
-	ratio = (double)itr / max_itr;
-	red = (int)(9 * (1 - ratio) * ratio * ratio * ratio * 255);
-	green = (int)(15 * (1 - ratio) * (1 - ratio) * ratio * ratio * 255);
-	blue = (int)(8.5 * (1 - ratio) * (1 - ratio) * (1 - ratio) * ratio * 255);
-	res = (red << 16) | (green << 8) | (blue);
-	return (res);
-}
-
 void	ft_reset(t_data *data)
 {
 	data->escape_value = 4;
-	data->iteration = 10;
+	data->iteration = 15;
 	data->shift_x = 0;
 	data->shift_y = 0;
 	data->zoom = 1.0;
@@ -66,4 +50,12 @@ void	ft_reset(t_data *data)
 		data->julia_y = data->initial_julia_y;
 	}
 	ft_render(data);
+}
+
+void	ft_absolute(t_complex *nb)
+{
+	if (nb->x_r < 0)
+		nb->x_r *= -1;
+	if (nb->y_i < 0)
+		nb->y_i *= -1;
 }

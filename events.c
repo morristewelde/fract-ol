@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 23:58:08 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/01 20:11:01 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 	ft_render(data);
 	return (0);
 }*/
-
 int	mouse_handle(int button, int x, int y, t_data *data)
 {
 	double	mouse_fractal_x;
@@ -33,7 +32,7 @@ int	mouse_handle(int button, int x, int y, t_data *data)
 	double	zoom_factor;
 
 	mouse_fractal_x = (map_s(x, -2, 2, WIDTH) * data->zoom) + data->shift_x;
-	mouse_fractal_y = (map_s(y, -2, 2, HEIGHT) * data->zoom) + data->shift_y;
+	mouse_fractal_y = (map_s(y, 2, -2, HEIGHT) * data->zoom) + data->shift_y;
 	center_x = (map_s(WIDTH / 2, -2, 2, WIDTH) * data->zoom) + data->shift_x;
 	center_y = (map_s(HEIGHT / 2, -2, 2, HEIGHT) * data->zoom) + data->shift_y;
 	if (button == 5)
@@ -61,13 +60,13 @@ int	close_f(t_data *data)
 int	key_handle(int keysym, t_data *data)
 {
 	if (keysym == XK_Down || keysym == XK_s)
-		data->shift_y += (0.5 * data->zoom);
+		data->shift_y += (0.2 * data->zoom);
 	else if (keysym == XK_Up || keysym == XK_w)
-		data->shift_y -= (0.5 * data->zoom);
+		data->shift_y -= (0.2 * data->zoom);
 	if (keysym == XK_Right || keysym == XK_d)
-		data->shift_x -= (0.5 * data->zoom);
+		data->shift_x -= (0.2 * data->zoom);
 	else if (keysym == XK_Left || keysym == XK_a)
-		data->shift_x += (0.5 * data->zoom);
+		data->shift_x += (0.2 * data->zoom);
 	else if (keysym == XK_KP_Add)
 		data->iteration += 5;
 	else if (keysym == XK_KP_Subtract && data->iteration > 0)

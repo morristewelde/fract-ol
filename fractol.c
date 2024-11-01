@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/10/31 23:54:35 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/01 20:26:15 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	invalid_input(void)
 {
 	putstr_fd("Invalid Input\n", 2);
-	putstr_fd("Please enter : \n", 2);
-	putstr_fd("\"./fractol mandelbrot\n", 2);
-	putstr_fd("\t or  \"./fractol burningship\"\n", 2);
+	putstr_fd("Please enter :\n", 2);
+	putstr_fd("\"./fractol mandelbrot\"\n", 2);
+	putstr_fd("\t or \"./fractol burningship\"\n", 2);
 	putstr_fd("\t\t or  \"./fractol julia x y\"\n", 2);
 	putstr_fd("x and y should ideally be between -2.0 and 2.0\"\n", 2);
 	exit(EXIT_FAILURE);
@@ -32,9 +32,9 @@ void	instructions(void)
 	putstr_fd("\tor the keys 'w'(up) 's'(down) 'd'(right) 'a'(left)\n", 1);
 	putstr_fd("To increase and decrease iteration\n", 1);
 	putstr_fd("\t Use the keys '+' and '-'\n", 1);
-	putstr_fd("\t press space to reset the fractol to the original set", 1);
+	putstr_fd("Press 'space' to reset the fractol to the original set\n", 1);
 	putstr_fd("\t This will increase and decrease image quality)\n", 1);
-
+	putstr_fd("press 'l' to lock/unlock mouse hover during julia set\n", 1);
 }
 
 int	main(int ac, char **av)
