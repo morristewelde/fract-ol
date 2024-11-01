@@ -6,7 +6,7 @@
 #    By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 23:48:08 by mtewelde          #+#    #+#              #
-#    Updated: 2024/10/31 21:00:20 by mtewelde         ###   ########.fr        #
+#    Updated: 2024/11/01 22:10:01 by mtewelde         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ RM			=	rm -rf
 
 MLX			=	./minilibx-linux/libmlx.a
 
-SRCS		=	fractol.c fract_init.c fract_render.c events.c utils.c fractol_utils.c 
+SRCS		=	fractol.c\
+				src/fract_init.c src/fract_render.c src/events.c src/utils.c src/fractol_utils.c 
 
 OBJ 		= 	$(SRCS:.c=.o)
 

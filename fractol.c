@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/01 20:26:15 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/01 22:48:49 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int	main(int ac, char **av)
 	int		j;
 	int		b;
 
-	m = ft_strncmp(av[1], "mandelbrot", 10);
-	b = ft_strncmp(av[1], "burningship", 11);
-	j = ft_strncmp(av[1], "julia", 5);
+	m = ft_strcmp(av[1], "mandelbrot");
+	b = ft_strcmp(av[1], "burningship");
+	j = ft_strcmp(av[1], "julia");
 	if (ac == 2 && (m == 0 || b == 0))
 		data.name = av[1];
 	else if (ac == 4 && j == 0)

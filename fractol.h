@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:38:11 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/01 16:45:55 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/01 22:46:40 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int			mouse_handle(int button, int x, int y, t_data *data);
 
 // utils for calulating and coverting double
 double		ft_atodb(char *s);
-int			ft_strncmp(char *s1, char *s2, int n);
+int			ft_strcmp(char *s1, char *s2);
 int			valid_float(char *s);
 int			color_pattern(unsigned int itr, unsigned int max_itr);
 void		ft_absolute(t_complex *nb);

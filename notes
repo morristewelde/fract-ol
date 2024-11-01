@@ -107,5 +107,9 @@ MOUSE HANDLE
 KEYPRESS and KEYPRESSMASK
  	-- Key difference is keyPress and KeyPressMask (ButtonPress and ButtonPressMask) 
 	-- is the Key press is is typically an event identifier 
+--
 
+Key Difference BurningSHIP and mandelbrot
+	Burning Ship maps y from -2 to 2 (upward).
+	Mandelbrot and Julia map y from 2 to -2 (downward).
 	
