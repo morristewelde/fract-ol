@@ -6,14 +6,14 @@
 #    By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/14 23:48:08 by mtewelde          #+#    #+#              #
-#    Updated: 2024/11/01 22:10:01 by mtewelde         ###   ########.fr        #
+#    Updated: 2024/11/03 20:24:25 by mtewelde         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	fractol
 
 CC			=	cc
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -g
 LIBS      	=	-lXext -lX11 -lm
 RM			=	rm -rf
 

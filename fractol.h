@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:38:11 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/01 22:46:40 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/03 20:09:27 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ typedef struct s_data
 	double			julia_y;
 	double			initial_julia_x;
 	double			initial_julia_y;
-	int				current_color;
 	int				mouse_locked;
 }	t_data;
 

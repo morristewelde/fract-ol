@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/01 22:46:47 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/03 20:03:56 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ double	ft_atodb(char *s)
 //	recommened to add
 //	if (ft_atodb(s) > 2.0 || ft_atodb(s) < -2.0)
 //		return (0);
-int	valid_float(char *s)
+/*int	valid_float(char *s)
 {
 	int	flag;
 	int	i;
@@ -77,6 +77,63 @@ int	valid_float(char *s)
 			return (0);
 		i++;
 	}
+	return (1);
+}*/
+
+/*int	valid_float(char *s)
+{
+	int	flag;
+	int	i;
+	int	digits;
+
+	i = 0;
+	flag = 0;
+	digits = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	while (s[i])
+	{
+		if (s[i] == '.')
+		{
+			flag++;
+			if (flag > 1)
+				return (0);
+		}
+		else if (s[i] >= '0' && s[i] <= '9')
+			digits = 1;
+		else
+			return (0);
+		i++;
+	}
+	if (!digits)
+		return (0);
+	return (1);
+}*/
+
+int	valid_float(char *s)
+{
+	int	flag;
+    int	i;
+    int	digit_found;
+
+	i = 0;
+	flag = 0;
+	digit_found = 0;
+
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	while (s[i])
+	{
+        if (s[i] == '.')
+            flag++;
+        else if (s[i] >= '0' && s[i] <= '9')
+			digit_found = 1;
+		else
+            return (0);
+        i++;
+    }
+	if (!digit_found || flag > 1)
+		return (0);
 	return (1);
 }
 

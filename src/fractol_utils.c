@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 00:41:12 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/01 22:47:02 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/03 12:38:56 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,6 @@ t_complex	square_complex(t_complex z)
 double	map_s(double old_n, double new_mn, double new_mx, double old_mx)
 {
 	return (((new_mx - new_mn) * old_n / (old_mx)) + new_mn);
-}
-
-void	ft_reset(t_data *data)
-{
-	data->escape_value = 4;
-	data->iteration = 15;
-	data->shift_x = 0;
-	data->shift_y = 0;
-	data->zoom = 1.0;
-	if (!ft_strcmp(data->name, "julia"))
-	{
-		data->julia_x = data->initial_julia_x;
-		data->julia_y = data->initial_julia_y;
-	}
-	ft_render(data);
 }
 
 void	ft_absolute(t_complex *nb)

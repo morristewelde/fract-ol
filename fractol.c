@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/01 22:48:49 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/03 20:28:48 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,11 @@ void	instructions(void)
 int	main(int ac, char **av)
 {
 	t_data	data;
-	int		m;
-	int		j;
-	int		b;
-
-	m = ft_strcmp(av[1], "mandelbrot");
-	b = ft_strcmp(av[1], "burningship");
-	j = ft_strcmp(av[1], "julia");
-	if (ac == 2 && (m == 0 || b == 0))
+	
+	if (ac == 2 && (!ft_strcmp(av[1], "mandelbrot")
+		|| !ft_strcmp(av[1], "burningship")))
 		data.name = av[1];
-	else if (ac == 4 && j == 0)
+	else if (ac == 4 && !ft_strcmp(av[1], "julia"))
 	{
 		if (!valid_float(av[2]) || !valid_float(av[3]))
 			invalid_input();

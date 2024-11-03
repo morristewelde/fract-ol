@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 03:57:09 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/01 22:48:14 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/03 12:39:10 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,21 @@ void	data_init(t_data *data)
 		data->initial_julia_x = data->julia_x;
 		data->initial_julia_y = data->julia_y;
 	}
+}
+
+void	ft_reset(t_data *data)
+{
+	data->escape_value = 4;
+	data->iteration = 15;
+	data->shift_x = 0;
+	data->shift_y = 0;
+	data->zoom = 1.0;
+	if (!ft_strcmp(data->name, "julia"))
+	{
+		data->julia_x = data->initial_julia_x;
+		data->julia_y = data->initial_julia_y;
+	}
+	ft_render(data);
 }
 
 static void	event_init(t_data	*data)
