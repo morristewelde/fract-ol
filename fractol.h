@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:38:11 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/06 19:50:48 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/06 21:47:25 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 //only perrror is usedfrom stdio.h 
 # include <stdio.h>
-//exit();
+//exit(); 
 # include <stdlib.h>
 # include <unistd.h>
 # include "minilibx-linux/mlx.h"
