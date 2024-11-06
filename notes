@@ -126,3 +126,5 @@ IMG
 	    -- Endian refers to the order in which bytes are arranged within larger data types, such as integers or floating-point numbers. There are two common types of endianness:
 		-- If the endian is 0 (indicating little-endian), you may need to access pixel values assuming that the least significant byte comes first.
 		-- If the endian is 1 (indicating big-endian), you would access pixel values with the most significant byte first.
+
+		#define constants like WIDTH and HEIGHT are not variables—they are preprocessor macros that the compiler substitutes with values during preprocessing.
