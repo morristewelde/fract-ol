@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 01:38:11 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/03 20:09:27 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:50:48 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "minilibx-linux/mlx.h"
-// # include <math.h>
 # include <X11/keysym.h>
 # include <X11/X.h>
 

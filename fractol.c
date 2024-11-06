@@ -6,7 +6,7 @@
 /*   By: mtewelde <mtewelde@student.42lehavre.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 23:29:17 by mtewelde          #+#    #+#             */
-/*   Updated: 2024/11/03 20:28:48 by mtewelde         ###   ########.fr       */
+/*   Updated: 2024/11/06 19:38:20 by mtewelde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	invalid_input(void)
 	putstr_fd("\t or \"./fractol burningship\"\n", 2);
 	putstr_fd("\t\t or  \"./fractol julia x y\"\n", 2);
 	putstr_fd("x and y should ideally be between -2.0 and 2.0\"\n", 2);
-	exit(EXIT_FAILURE);
+	exit(1);
 }
 
 void	instructions(void)
@@ -40,9 +40,9 @@ void	instructions(void)
 int	main(int ac, char **av)
 {
 	t_data	data;
-	
+
 	if (ac == 2 && (!ft_strcmp(av[1], "mandelbrot")
-		|| !ft_strcmp(av[1], "burningship")))
+			|| !ft_strcmp(av[1], "burningship")))
 		data.name = av[1];
 	else if (ac == 4 && !ft_strcmp(av[1], "julia"))
 	{
